@@ -19,18 +19,7 @@ def calculate_solar_altitude(latitude, longitude, year, month, day, hour, minute
     return altitude_deg
 
 
-# 示例用法
-latitude = 39.9  # 北纬39.9度
-longitude = 116.4  # 东经116.4度
-year = 2016
-month = 3
-day = 8
-hour = 12
-minute = 0
-second = 0
 
-altitude = calculate_solar_altitude(latitude, longitude, year, month, day, hour, minute, second)
-print("北京时区（UTC+8）的太阳高度角（度）:", altitude)
 
 
 
@@ -51,18 +40,7 @@ def calculate_solar_azimuth(latitude, longitude, year, month, day, hour, minute,
     return azimuth_deg
 
 
-# 示例用法
-latitude = 39.9  # 北纬39.9度
-longitude = 116.4  # 东经116.4度
-year = 2023
-month = 9
-day = 8
-hour = 12
-minute = 0
-second = 0
 
-azimuth = calculate_solar_azimuth(latitude, longitude, year, month, day, hour, minute, second)
-print("北京时区（UTC+8）的太阳方位角（度）:", azimuth)
 
 
 
@@ -78,13 +56,7 @@ def calculate_dni( altitude, solar_altitude):
 
     return dni
 
-# 示例用法
-latitude = 39.9  # 北纬39.9度
-altitude_km = 3.0  # 海拔高度，单位：km
-solar_altitude_deg = 45.0  # 太阳高度角，单位：度
 
-dni = calculate_dni( altitude_km, solar_altitude_deg)
-print("法向直接辐射辐照度 DNI（kW/m2）:", dni)
 
 
 
@@ -100,13 +72,6 @@ def calculate_field_output_power(dni, mirror_areas, optical_efficiencies):
     return total_power
 
 
-# 示例用法
-dni = 1000.0  # 法向直接辐射辐照度，单位：kW/m^2
-mirror_areas = [10.0, 12.0, 15.0]  # 定日镜采光面积列表，单位：m^2
-optical_efficiencies = [0.85, 0.9, 0.88]  # 定日镜光学效率列表
-
-output_power = calculate_field_output_power(dni, mirror_areas, optical_efficiencies)
-print("定日镜场的输出热功率 Efield（kW）:", output_power)
 
 
 def calculate_optical_efficiency(distance_to_receiver,solar_elevation_angle):
@@ -136,11 +101,7 @@ def calculate_optical_efficiency(distance_to_receiver,solar_elevation_angle):
     return eta
 
 
-# 示例用法
-distance_to_receiver = 5.0  # 镜面中心到集热器中心的距离，单位：m
 
-optical_efficiency = calculate_optical_efficiency(distance_to_receiver,90)
-print("定日镜的光学效率 𝜂:", optical_efficiency)
 
 
 def set_distance(x,y,h):
